@@ -2,11 +2,11 @@ module Path (
   buildGraph
 , shortestPath
 , demo
-) where 
+) where
 
-import Data.List
+import           Data.List
 import qualified Data.List.Key as K
-import Data.Map ((!), fromList, fromListWith, adjust, keys, Map)
+import           Data.Map      (Map, adjust, fromList, fromListWith, keys, (!))
 
 dijkstra :: Ord a => a -> Map a [(a, Float)] -> Map a (Float, Maybe a)
 dijkstra source graph =
