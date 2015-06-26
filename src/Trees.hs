@@ -1,9 +1,9 @@
 module Trees (
-demo
+main
 ) where
 
 import           Data.List  (find)
-import           Data.Maybe (Maybe (..))
+
 
 data Tree a = EmptyTree | Node a (Tree a) (Tree a) deriving Show
 
@@ -11,10 +11,10 @@ data DFSKind = PreOrder | InOrder | PostOrder
 
 -- | Deep First Search. Returns a list of nodes of a given tree.
 
-dfs :: Tree a     -- ^ Tree to traverse
+dfs :: Tree a      -- ^ Tree to traverse
     -> (a -> Bool) -- ^ Predicate
-    -> DFSKind    -- ^ Traversal kind
-    -> Maybe a    -- ^ Search result
+    -> DFSKind     -- ^ Traversal kind
+    -> Maybe a     -- ^ Search result
 
 dfs EmptyTree p _ = Nothing
 
@@ -61,8 +61,8 @@ tree = Node 1
                         (Node 9 EmptyTree EmptyTree))
                   EmptyTree)
 
-demo :: IO ()
-demo = do print $ dfs tree query InOrder
+main :: IO ()
+main = do print $ dfs tree query InOrder
           print $ dfs tree query PostOrder
           print $ dfs tree query PreOrder
           print $ bfs tree query

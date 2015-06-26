@@ -11,7 +11,12 @@ cabal-file: project.cabal
 version: 1
 extra-packages: ! 'URL: https://hackage.haskell.org/package/utility-ht-0.0.10/utility-ht-0.0.10.tar.gz
 
-  Hackage: containers'
-ghc-args: []
+  Hackage: containers
+
+  URL: https://hackage.haskell.org/package/STMonadTrans-0.3.3/STMonadTrans-0.3.3.tar.gz
+
+  URL: http://hackage.haskell.org/package/equivalence-0.3.1/equivalence-0.3.1.tar.gz'
+ghc-args:
+- -Wall
 excluded-modules:
 - Setup.hs
