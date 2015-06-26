@@ -12,6 +12,9 @@ import           Data.Maybe             (fromJust)
 import           Data.Ord               (comparing)
 import           Debug.Trace
 
+-- Current implementation uses EquivalenceMonad implementation
+-- of Tarjan's union-find algo done by https://bitbucket.org/paba/equivalence
+
 kruskal :: Ord a =>
            (Edge -> a) -> Graph -> [(Vertex, Vertex)]
 kruskal weight graph = runEquivM' $ filterM go sorted
