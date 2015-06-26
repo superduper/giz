@@ -22,5 +22,8 @@ executable GIZ
   build-depends:       base >=4.7 
                      , utility-ht
                      , containers
+                     , equivalence
+                     , STMonadTrans
+
   hs-source-dirs:      src
   default-language:    Haskell2010
