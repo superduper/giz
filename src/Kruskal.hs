@@ -34,14 +34,17 @@ kruskal weight graph = runEquivM' $ filterM go sorted
 fromL :: forall c a. Ord a => [(a, c)] -> a -> c
 fromL xs = fromJust . flip Map.lookup (Map.fromList xs)
 
-main :: IO ()
+main :: IO () 
 main = mapM_ (putStrLn . show) $ kruskal w g
   where
+    -- edges + weights
     w = fromL [ ((1,2),1)
               , ((2,3),4)
               , ((3,4),5)
               , ((1,4),30)
               , ((1,3),4) ]
+    -- Builds an adjacency list representation of a graph, 
+    -- mapping each vertex to its list of successors.
     g   = G.buildG  (1,4) [ (1,2)
                           , (2,3)
                           , (3,4)
