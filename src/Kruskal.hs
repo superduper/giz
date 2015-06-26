@@ -7,7 +7,7 @@ import           Control.Monad          (filterM)
 import           Data.Equivalence.Monad
 import           Data.Graph             as G
 import           Data.List              (sortBy)
-import           Data.Map               as M
+import           Data.Map               as Map
 import           Data.Maybe             (fromJust)
 import           Data.Ord               (comparing)
 import           Debug.Trace
@@ -32,16 +32,16 @@ kruskal weight graph = runEquivM' $ filterM go sorted
                     else equate u v >> return True -- we don't have it
 
 fromL :: forall c a. Ord a => [(a, c)] -> a -> c
-fromL xs = fromJust . flip M.lookup (M.fromList xs)
+fromL xs = fromJust . flip Map.lookup (Map.fromList xs)
 
 main :: IO ()
 main = mapM_ (putStrLn . show) $ kruskal w g
   where
     w = fromL [ ((1,2),1)
-                        , ((2,3),4)
-                        , ((3,4),5)
-                        , ((1,4),30)
-                        , ((1,3),4) ]
+              , ((2,3),4)
+              , ((3,4),5)
+              , ((1,4),30)
+              , ((1,3),4) ]
     g   = G.buildG  (1,4) [ (1,2)
                           , (2,3)
                           , (3,4)
