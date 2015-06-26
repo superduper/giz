@@ -1,0 +1,124 @@
+digraph programmingLanguages { rankdir=LR
+/**
+
+green  - influenced
+navy   - .NET interop
+red    - Java interop
+orange - C interop
+
+**/
+overlap=false
+graph [fontsize=8]; edge [fontsize=8, fontname="Helvetica"]; node [shape=plaintext fontsize=8 fontname="Helvetica"];
+ranksep = 0.8; nodesep = .04;
+
+
+"Standard ML" -> "ML"      [color="green"]
+"ML"          -> "Haskell" [color="green"]
+"Standard ML" -> "Haskell" [color="green"]
+"Lazy ML"     -> "Haskell" [color="green"]
+"Miranda"     -> "Haskell" [color="green"]
+"Lisp"        -> "Haskell" [color="green"]
+"Scheme"      -> "Haskell" [color="green"]
+"ISWIM"       -> "Haskell" [color="green"]
+"FP"          -> "Haskell" [color="green"]
+"APL"         -> "Haskell" [color="green"]
+"Hope"        -> "Haskell" [color="green"]
+"Hope+"       -> "Haskell" [color="green"]
+"SISA"        -> "Haskell" [color="green"]
+"Orwell"      -> "Haskell" [color="green"]
+"Id"          -> "Haskell"  [color="green"]
+
+"Haskell" -> "Agda" [color="green"]
+"Haskell" -> "greenspec" [color="green"]
+"Haskell" -> "Clojure" [color="green"]
+"Haskell" -> "C#" [color="green"]
+"Haskell" -> "Cat" [color="green"]
+"Haskell" -> "Cayenne" [color="green"]
+"Haskell" -> "Clean" [color="green"]
+"Haskell" -> "Curry" [color="green"]
+"Haskell" -> "Epigram" [color="green"]
+"Haskell" -> "Escher" [color="green"]
+"Haskell" -> "F#" [color="green"]
+"Haskell" -> "Factor" [color="green"]
+"Haskell" -> "Isabelle" [color="green"]
+"Haskell" -> "Mercury" [color="green"]
+"Haskell" -> "Ωmega"            [color="green"]
+"Haskell" -> "Perl 6"           [color="green"]
+"Haskell" -> "Python" [color="green"]
+"Haskell" -> "Qi"               [color="green"]
+"Haskell" -> "Scala"            [color="green"]
+"Haskell" -> "Timber"           [color="green"]
+"Haskell" -> "Visual Basic 9.0" [color="green"]
+
+"ML" -> "Miranda" [color="green"]
+"ML" -> "Cyclone" [color="green"]
+"ML" -> "Nemerle" [color="green"]
+"ML" -> "C++" [color="green"]
+
+
+"Objective-C" -> "Java" [color="green"]
+"Ada 83" -> "Java" [color="green"]
+"Object Pascal" -> "Java" [color="green"]
+"UCSD Pascal" -> "Java" [color="green"]
+"Oberon" -> "Java" [color="green"]
+"C++" -> "Java" [color="green"]
+"C#" -> "Java" [color="green"]
+"Smalltalk" -> "Java" [color="green"]
+"Eiffel" -> "Java" [color="green"]
+"Mesa" -> "Java" [color="green"]
+"Modula-3" -> "Java" [color="green"]
+
+"Lisp" -> "Common Lisp" [color="green"]
+"Lisp Machine Lisp" -> "Common Lisp" [color="green"]
+"Maclisp" -> "Common Lisp" [color="green"]
+"Scheme" -> "Common Lisp" [color="green"]
+"Interlisp" -> "Common Lisp" [color="green"]
+
+subgraph jvm_cluster {
+  edge [dir=none, color=red ]
+  style=filled;
+	color=lightgrey;
+
+  Scala   -> Java  
+  Kotlin  -> Java  
+  Groovy  -> Java  
+  Clojure -> Java  
+  Python  -> Java  
+  Fantom  -> Java  
+  Ceylon  -> Java  
+}
+
+subgraph ffi_cluster {
+  edge [dir=none, color=orange ]
+  style=filled;
+	color=lightgrey;
+  "Haskell"     -> "C"
+  "Common Lisp"-> "C"
+  "Python"-> "C"
+  "Go"-> "C"
+  "Objective C"-> "C"
+  "Java" -> "C"
+  "C#" -> "C"
+}
+
+subgraph cli_cluster {
+  edge [dir=none, color=navy ]
+  style=filled;
+	color=lightgrey;
+  "L#" -> "C#" 
+  "F#" -> "C#" 
+  "Boo" -> "C#" 
+  "Ada" -> "C#" 
+  "Fantom" -> "C#" 
+  "Python" -> "C#" 
+  "Eiffel" -> "C#" 
+  "Visual Basic 9.0" -> "C#" 
+}
+
+"C#"   -> "Fantom"
+"Java"   -> "Fantom"
+"Scala"   -> "Fantom"
+"Ruby"   -> "Fantom"
+"Erlang"   -> "Fantom"
+
+}
